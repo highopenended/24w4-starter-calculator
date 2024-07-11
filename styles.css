@@ -7,11 +7,49 @@ body {
   margin: 0;
 }
 
+.backgroundText{
+  /* z-index: -1; */
+  color: gray;
+  top: 0;
+  left: 0;
+  position: absolute;  
+}
+
+.animation_1{
+  animation:1s slidein;
+}
+
+.animation_2{
+  animation:1s slideout;
+}
+@keyframes slidein {
+  from {
+    translate: 150vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+@keyframes slideout {
+  from {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+
+  to {
+    translate: 150vw 0;
+    scale: 200% 1;
+  }
+}
 .calculator {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: absolute;
 }
 
 .display {
