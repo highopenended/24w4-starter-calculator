@@ -2,25 +2,19 @@ let displayValue = '0'
 let firstOperand = null
 let secondOperand = null
 let currentOperator = null
-
 let prevEl;
-
-
-// const single_digit=['Zero','One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
-// const double_underTwenty=['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen']
-// const double_overTwenty=['Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
-// const higher_digits=['Thousand', 'Million', 'Billion', 'Trillion','Quadrillion','Quintillion','Sextillion','Septillion','Octillion','Nonillion','Decillion']
+let hitCalculate=false
 
 function updateDisplay(skipSlidingEl = false) {
   const display = document.getElementById('display')
+  const displayNums = document.getElementById('displayNums')
+  displayValue=displayValue.replaceAll(',', '')
 
   switch(displayValue){
     case '8675309':
       displayValue="Jenny"
     default:
   }
-  displayValue=displayValue.replaceAll(',', '')
-  console.log(displayValue.length)
   if(displayValue.length>10){
     displayValue=displayValue.substring(0,10)
     addSlidingEl('Too Long',true)
@@ -36,19 +30,17 @@ function updateDisplay(skipSlidingEl = false) {
     }
   }else{
     addSlidingEl(displayValue,true)
-    // addSlidingEl(displayValue,true)
-    // addSlidingEl(displayValue,true)
   }
-  // addSlidingEl(displayValue)
-  display.innerText = displayValue
+  // display.innerText = displayValue
+  displayNums.textContent=displayValue
 }
 
 function addSlidingEl(num,isSlow=false){
   let newEl = document.createElement('p')
   if(isSlow){
-    newEl.classList.add('backgroundText','animation_2')    
+    newEl.classList.add('flyingText','animation_2')    
   }else{
-    newEl.classList.add('backgroundText','animation_1')
+    newEl.classList.add('flyingText','animation_1')
   }
   newEl.textContent=num
 
@@ -77,6 +69,10 @@ function numberWithCommas(x) {
 }
 
 function appendNumber(number) {
+  if(hitCalculate){
+    hitCalculate=!hitCalculate
+    displayValue=''
+  }
   if (displayValue === '0') {
     displayValue = number.toString()
   } else {
@@ -89,6 +85,7 @@ function appendOperator(operator) {
   if (currentOperator !== null) {
     calculate()
   }
+  displayValue=displayValue.replaceAll(',', '')
   firstOperand = parseFloat(displayValue)
   currentOperator = operator
   displayValue = '0'
@@ -96,6 +93,7 @@ function appendOperator(operator) {
 }
 
 function calculate() {
+  displayValue=displayValue.replaceAll(',', '')
   secondOperand = parseFloat(displayValue)
   if (currentOperator === '+') {
     displayValue = (firstOperand + secondOperand).toString()
@@ -111,6 +109,7 @@ function calculate() {
   firstOperand = null
   secondOperand = null
   currentOperator = null
+  hitCalculate=true
 }
 
 function clearDisplay() {
