@@ -3,7 +3,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: repeating-linear-gradient(rgb(255, 0, 191),rgb(255, 208, 0), rgb(0, 121, 235));
+  /* background-image: repeating-linear-gradient(rgb(255, 141, 240),rgb(0, 0, 0,1), rgb(61, 129, 194)); */
+  background-image: repeating-linear-gradient(rgb(255, 0, 191),rgb(0, 121, 235), rgb(255, 208, 0));
+  /* background: linear-gradient(90deg, rgba(0,0,0,0.927608543417367) 0%, rgba(0,1,255,0.5) 50%, rgba(35,21,76,0.26094187675070024) 71%, rgba(113,67,242,1) 100%); */
   margin: 0;
 }
 
@@ -13,9 +15,14 @@ body {
   left: 0px;
   font-size: 100px;
   position: fixed;  
-  opacity: 0%;
+  opacity: 100%;
   z-index: -1;
+  /* background-image: url(Images/CalculatorDisplayHexes.png); */
+  /* border: #007910 10px dotted; */
 }
+
+
+
 
 .animation_1{
   animation:1.5s slidein;
@@ -49,21 +56,17 @@ body {
 .calculator {
   padding: 5px;
   border-radius: 10px;
-  background-image: repeating-linear-gradient(rgba(66, 66, 66, .3),rgb(0, 0, 0, .3));
+  background: repeating-linear-gradient(rgba(66, 66, 66, .3),rgb(0, 0, 0, .3));
+  background-image: url(Images/ColorfulCircuitry.png);
+  background-size: contain;
   position: absolute;
   border: rgb(66, 66, 66, .5) double 2px;
-}
-
-.calculator img{
-  /* background-size: contain; */
 }
 
 .calculator2 {
   position: relative;
   padding: 5px;
   border-radius: 10px;
-  /* background-image: repeating-linear-gradient(rgba(66, 66, 66, .3),rgb(0, 0, 0, .3)); */
-  /* border: rgb(5, 0, 80) solid 1px; */
   left: -2px;
   top: -2px;
   z-index: -1;
@@ -83,7 +86,13 @@ body {
   color: #fff;
   border-radius: 5px;
   text-align: right;
-  background-image: repeating-linear-gradient(rgba(66, 66, 66, 1),rgb(0, 0, 0, 1));;
+  background: repeating-linear-gradient(rgba(66, 66, 66, 1),rgb(0, 0, 0, 1));;
+}
+.displayWrapper img{
+  position: absolute;
+  height: 55px;
+  top: 5px;
+  opacity: .7;
 }
 
 .buttons {
@@ -124,13 +133,16 @@ body {
 .btn:hover {
   background-color: #555;
   font-size: 1.6em;
-  border-left: solid rgb(80, 80, 80);
-  border-top: solid rgb(70, 70, 70);
+  border-left: solid rgb(53, 53, 53);
+  border-top: solid rgb(48, 48, 48);
+  border-radius: 3px 10px 8px 13px;
+
   /* scale: 1.1; */
 }
 
 .btn-clear {
   background-color: #0084ff;
+  color: #86c2fa;
 }
 
 .btn-clear:hover {
