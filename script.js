@@ -19,6 +19,12 @@ function updateDisplay(skipSlidingEl = false) {
       displayValue="Jenny"
     default:
   }
+  displayValue=displayValue.replaceAll(',', '')
+  console.log(displayValue.length)
+  if(displayValue.length>10){
+    displayValue=displayValue.substring(0,10)
+    addSlidingEl('Too Long',true)
+  }
 
   displayValue=numberWithCommas(displayValue)
 
@@ -37,9 +43,9 @@ function updateDisplay(skipSlidingEl = false) {
   display.innerText = displayValue
 }
 
-function addSlidingEl(num,isSolution=false){
+function addSlidingEl(num,isSlow=false){
   let newEl = document.createElement('p')
-  if(isSolution){
+  if(isSlow){
     newEl.classList.add('backgroundText','animation_2')    
   }else{
     newEl.classList.add('backgroundText','animation_1')
@@ -48,7 +54,7 @@ function addSlidingEl(num,isSolution=false){
 
   let newTop = Math.floor(Math.random() * 50) + '%';
   newEl.style.top=newTop
-  if(isSolution){
+  if(isSlow){
     console.log(newEl.style.height)
     newEl.style.fontWeight='900' ;
 
