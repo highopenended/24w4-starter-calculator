@@ -3,27 +3,16 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: repeating-linear-gradient(rgb(255, 141, 240),rgb(0, 0, 0,1), rgb(61, 129, 194));
+  /* background-image: repeating-linear-gradient(rgb(255, 141, 240),rgb(0, 0, 0,1), rgb(61, 129, 194)); */
   /* background-image: repeating-linear-gradient(rgb(255, 0, 191),rgb(0, 121, 235), rgb(255, 208, 0)); */
   /* background: linear-gradient(90deg, rgba(0,0,0,0.927608543417367) 0%, rgba(0,1,255,0.5) 50%, rgba(35,21,76,0.26094187675070024) 71%, rgba(113,67,242,1) 100%); */
   margin: 0;
-  /* scale: 200%; */
   margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   overflow: auto;
-  background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgb(255, 0, 179) 98%);
+  background: linear-gradient(315deg, rgb(155, 0, 144) 3%, rgb(67, 182, 211) 38%, rgb(59, 133, 128) 68%, rgb(78, 0, 59) 98%);
   animation: gradient 15s ease infinite;
-  background-size: 400% 400%;
-  background-attachment: fixed;
-}
-
-body {
-  margin: auto;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  overflow: auto;
-  background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgb(0, 122, 243) 38%, rgba(48,238,226,1) 68%, rgb(240, 0, 208) 98%);
-  animation: gradient 15s ease infinite;
-  background-size: 400% 400%;
+  background-size: 4000% 4000%;
   background-attachment: fixed;
 }
 
@@ -38,7 +27,7 @@ body {
   border-radius: 1000% 1000% 0 0;
   position: fixed;
   width: 200%;
-  height: 12em;
+  height: 26vw;
   animation: wave 10s -3s linear infinite;
   transform: translate3d(0, 0, 0);
   opacity: 0.8;
@@ -46,7 +35,6 @@ body {
   left: 0;
   z-index: -1;
 }
-
 .wave:nth-of-type(2) {
   bottom: -1.25em;
   animation: wave 18s linear reverse infinite;
@@ -67,33 +55,6 @@ body {
   100% {transform: translateX(1);}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-body .Style1{
-  background-image: repeating-linear-gradient(rgb(255, 141, 240),rgb(0, 0, 0,1), rgb(61, 129, 194));
-}
-body .Style2{
-  background-image: repeating-linear-gradient(rgb(255, 0, 191),rgb(0, 121, 235), rgb(255, 208, 0));
-}
-body .Style3{
-  background-image: repeating-linear-gradient(rgb(255, 0, 191),rgb(0, 121, 235), rgb(255, 208, 0));
-}
-.styleButton{
-  
-}
-
 .flyingText{
   color: rgb(34, 34, 34);
   top: 0%;
@@ -102,12 +63,7 @@ body .Style3{
   position: fixed;  
   opacity: 0%;
   z-index: -1;
-  /* background-image: url(Images/CalculatorDisplayHexes.png); */
-  /* border: #007910 10px dotted; */
 }
-
-
-
 
 .animation_1{
   animation:1.5s slidein;
@@ -116,38 +72,62 @@ body .Style3{
 }
 
 .animation_2{
-  animation:2s slidein;
-  animation-timing-function:ease-in-out;
+  animation:3s slidein2;
+  animation-timing-function:ease-out;
+  /* animation-timing-function:linear; */
   animation-fill-mode:both;
 }
 
-
 @keyframes slidein {
   from {
-    translate: 150vw 0;
+    translate: 150vw -30vw;
     scale: 200% 1;
     opacity: 200%;
     font-size: 200px;
     color: #ffffff;
+    transform:rotate3d(2,-1,-1,.2turn)
   }to {
     translate: 0vw 0;
     scale: 100% 1;
     opacity: 0%;
-    font-size: 50px;
+    font-size: 100px;
     color: #000000;
+  }
+}
+
+@keyframes slidein2 {
+  from {
+    translate: 120vw 0;
+    scale: 250% 1;
+    opacity: 200%;
+    font-size: 200px;
+    color: #00000000;
+    background-color: rgb(0, 0, 0,.2);
+    background-size: contain;
+    rotate: -20deg;
+    border: rgb(231, 255, 233) 10px dashed;
+  }to {
+    translate: 0vw 0;
+    scale: 100% 1;
+    opacity: 0%;
+    font-size: 100px;
+    color: #000000;
+    background-color: rgb(0, 0, 0,.2);
+    background-size: contain;
+    rotate: 20deg;
+    border: rgb(255, 255, 248) 10px dashed;
   }
 }
 
 .calculator {
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 10px 10px 20px 10px ;
   background-color: rgb(0, 0, 0,.4);
   position: absolute;
   border: rgb(66, 66, 66, .8) double 2px;
   background-image: url(Images/ColorfulCircuitry.png);
   background-size: contain;
 }
-
 .calculator2 {
   position: relative;
   padding: 5px;
@@ -156,9 +136,8 @@ body .Style3{
   top: -2px;
   z-index: -1;
   opacity: .8;
-  /* background-image: url(Images/ColorfulCircuitry.png);
-  background-size: contain; */
 }
+
 .calculator2 div.display{
   opacity: 0%;
 }
@@ -174,18 +153,19 @@ body .Style3{
   text-align: right;
   background: repeating-linear-gradient(rgba(66, 66, 66, 1),rgb(0, 0, 0, 1));;
 }
+
 .displayWrapper img{
   position: absolute;
   height: 55px;
   top: 5px;
   opacity: .3;
 }
+
 .display p{
   display: inline;
   position: relative;
   text-align: right;
   height: 55px;
-  /* top: 70px; */
   opacity: 1;
   width: 200px;
   font-size:xx-large;
@@ -204,7 +184,6 @@ body .Style3{
   padding: 20px;
   font-size: 1.5em;
   border: none;
-  /* background-color: #333; */
   background: radial-gradient(#414040, #333);
   color: #fff;
   border-radius: 2px 10px 10px 10px;
@@ -225,18 +204,15 @@ body .Style3{
 .btn p:hover{
   background:radial-gradient(rgb(83, 83, 83,1), rgb(83, 83, 83,.1), rgb(83, 83, 83,0));
   width: 200px;
-  /* padding: 15px; */
   border-radius: 50px;
 }
 
 .btn:hover {
   background-color: #555;
-  font-size: 1.6em;
+  font-size: 1.5em;
   border-left: solid rgb(53, 53, 53);
   border-top: solid rgb(48, 48, 48);
   border-radius: 3px 10px 8px 13px;
-
-  /* scale: 1.1; */
 }
 
 .btn-clear {

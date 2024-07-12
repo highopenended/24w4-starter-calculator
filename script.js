@@ -6,7 +6,7 @@ let prevEl;
 let hitCalculate=false
 
 function updateDisplay(skipSlidingEl = false) {
-  const display = document.getElementById('display')
+  // const display = document.getElementById('display')
   const displayNums = document.getElementById('displayNums')
   displayValue=displayValue.replaceAll(',', '')
 
@@ -19,9 +19,7 @@ function updateDisplay(skipSlidingEl = false) {
     displayValue=displayValue.substring(0,10)
     addSlidingEl('Too Long',true)
   }
-
   displayValue=numberWithCommas(displayValue)
-
   if(!skipSlidingEl){
     if(displayValue*1===0){
       addSlidingEl('Cleared')
@@ -31,20 +29,20 @@ function updateDisplay(skipSlidingEl = false) {
   }else{
     addSlidingEl(displayValue,true)
   }
-  // display.innerText = displayValue
   displayNums.textContent=displayValue
 }
 
 function addSlidingEl(num,isSlow=false){
   let newEl = document.createElement('p')
+  let newTop
   if(isSlow){
-    newEl.classList.add('flyingText','animation_2')    
+    newEl.classList.add('flyingText','animation_2')
+    newTop= '10%'
   }else{
     newEl.classList.add('flyingText','animation_1')
+    newTop= Math.floor((Math.random() * 75)-2.5) + '%';
   }
   newEl.textContent=num
-
-  let newTop = Math.floor(Math.random() * 50) + '%';
   newEl.style.top=newTop
   if(isSlow){
     console.log(newEl.style.height)
