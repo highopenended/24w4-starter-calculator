@@ -4,7 +4,6 @@
 This project was an attempt to incorporate various CSS tricks to make a cute entertaining calculator tool. It is designed using only the basics; JavaScript, CSS, and HTML.
 
 ## STACK / TECHNOLOGY
-
 - Javascript
 - HTML
 - CSS
@@ -13,7 +12,7 @@ This project was an attempt to incorporate various CSS tricks to make a cute ent
 - Basic calculator functionality
 - Flying text as numbers are entered
 - Flashy background and designs
-- 
+
 ## FEATURES REQUESTED
 - Advanced calculator functionality
 - Multiple color theme options
